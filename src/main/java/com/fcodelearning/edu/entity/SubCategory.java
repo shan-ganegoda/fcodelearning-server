@@ -1,9 +1,11 @@
 package com.fcodelearning.edu.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,7 +24,8 @@ public class SubCategory {
     @Column(name = "name")
     private String name;
 
-//    @OneToMany(mappedBy = "subCategories")
-//    private Collection<MainCategoryHasSubCategory> mainCategoryHasSubCategoriesById;
+    @JsonIgnore
+    @OneToMany(mappedBy = "subCategory")
+    private List<Cources> courcesList;
 
 }

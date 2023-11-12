@@ -11,9 +11,10 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
-public class Photos {
+@ToString
+public class Videos {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
@@ -21,13 +22,13 @@ public class Photos {
     @Basic
     @Column(name = "name")
     private String name;
+
     @Basic
-    @Column(name = "imageurl")
-    private String imageurl;
+    @Column(name = "url")
+    private String url;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "photo")
-    private List<Cources> courcesList;
-
+    @ManyToOne
+    private Lesson lesson;
 
 }

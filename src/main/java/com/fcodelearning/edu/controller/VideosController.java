@@ -1,7 +1,7 @@
 package com.fcodelearning.edu.controller;
 
-import com.fcodelearning.edu.dao.CourceDao;
-import com.fcodelearning.edu.entity.Cources;
+import com.fcodelearning.edu.dao.VideosDao;
+import com.fcodelearning.edu.entity.Videos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,21 +12,21 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/cources")
-public class CourceController {
+@RequestMapping("/videos")
+public class VideosController {
 
     @Autowired
-    private CourceDao courceDao;
+    private VideosDao videosDao;
 
     @GetMapping
-    public List<Cources> getAllCources(){
-        return courceDao.findAll();
+    public List<Videos> getAllCources(){
+        return videosDao.findAll();
     }
 
     @GetMapping("/{id}")
-    public Cources getById(@PathVariable Integer id){
+    public Videos getById(@PathVariable Integer id){
 
-        Optional<Cources> result = courceDao.findById(id);
+        Optional<Videos> result = videosDao.findById(id);
 
         if(result.isEmpty()) new ResponseStatusException(HttpStatus.NOT_FOUND,"Cource Not Found!");
         return result.get();
@@ -35,24 +35,24 @@ public class CourceController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cources save(@RequestBody Cources cource){
-        return courceDao.save(cource);
+    public Videos save(@RequestBody Videos videos){
+        return videosDao.save(videos);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public void delete(@PathVariable Integer id){
-        courceDao.deleteById(id);
+        videosDao.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public Cources update(@PathVariable Integer id,@RequestBody Cources cource){
+    public Videos update(@PathVariable Integer id,@RequestBody Videos videos){
 
-        if (!courceDao.existsById(id)){
+        if (!videosDao.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Cource Not Found!");
         }else{
-            cource.setId(id);
-            return courceDao.save(cource);
+            videos.setId(id);
+            return videosDao.save(videos);
         }
     }
 }

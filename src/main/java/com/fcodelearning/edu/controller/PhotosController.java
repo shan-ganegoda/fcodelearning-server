@@ -1,8 +1,6 @@
 package com.fcodelearning.edu.controller;
 
-import com.fcodelearning.edu.dao.LevelDao;
 import com.fcodelearning.edu.dao.PhotosDao;
-import com.fcodelearning.edu.entity.Level;
 import com.fcodelearning.edu.entity.Photos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;

@@ -1,7 +1,10 @@
 package com.fcodelearning.edu.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Builder
@@ -26,23 +29,39 @@ public class Cources {
     private Integer authorId;
 
     @Basic
+    @Column(name = "description")
+    private String description;
+
+    @Basic
+    @Column(name = "duration")
+    private String duration;
+
+    @Basic
+    @Column(name = "issertified")
+    private Boolean issertified;
+
+    @Basic
+    @Column(name = "videocount")
+    private Integer videocount;
+
+    @Basic
     @Column(name = "fee")
     private String fee;
 
     @ManyToOne
-    @JoinColumn(name = "level_id", referencedColumnName = "id")
     private Level level;
 
     @ManyToOne
-    @JoinColumn(name = "main_category_id", referencedColumnName = "id")
-    private MainCategory mainCategory;
-
-    @ManyToOne
-    @JoinColumn(name = "sub_category_id", referencedColumnName = "id")
     private SubCategory subCategory;
 
     @ManyToOne
-    @JoinColumn(name = "photo_id", referencedColumnName = "id")
+    private MainCategory mainCategory;
+
+    @ManyToOne
     private Photos photo;
+
+    @OneToMany(mappedBy = "cources")
+    private List<Lesson> lessonList;
+
 
 }
