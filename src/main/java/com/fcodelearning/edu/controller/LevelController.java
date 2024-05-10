@@ -1,27 +1,24 @@
 package com.fcodelearning.edu.controller;
 
-import com.fcodelearning.edu.dao.CourceDao;
-import com.fcodelearning.edu.dao.LevelDao;
-import com.fcodelearning.edu.entity.Cources;
-import com.fcodelearning.edu.entity.Level;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.fcodelearning.edu.model.Level;
+import com.fcodelearning.edu.repository.LevelRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@CrossOrigin
 @RestController
-@RequestMapping("/levels")
+@RequiredArgsConstructor
+@RequestMapping("/api/v1/levels")
 public class LevelController {
 
-    @Autowired
-    private LevelDao levelDao;
+    private final LevelRepository levelRepository;
 
-    @GetMapping
-    public List<Level> getAllCources(){
-        return levelDao.findAll();
+    @GetMapping("/{id}")
+    public Level getLevelById(@PathVariable int id) {
+
+        return levelRepository.findById(id).get();
     }
+
 }
