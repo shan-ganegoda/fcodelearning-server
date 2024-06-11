@@ -1,7 +1,6 @@
 package com.fcodelearning.edu.dto;
 
 import com.fcodelearning.edu.model.Role;
-import com.fcodelearning.edu.model.Userstatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

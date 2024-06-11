@@ -7,7 +7,6 @@ import com.fcodelearning.edu.model.SubCategory;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Getter

@@ -1,8 +1,10 @@
 package com.fcodelearning.edu.util;
 
 import com.fcodelearning.edu.dto.CourceDTO;
+import com.fcodelearning.edu.dto.PhotoDTO;
 import com.fcodelearning.edu.dto.UserDTO;
 import com.fcodelearning.edu.model.Cource;
+import com.fcodelearning.edu.model.Photo;
 import com.fcodelearning.edu.model.User;
 import org.mapstruct.Mapper;
 
@@ -18,4 +20,6 @@ public interface ObjectMapper {
     CourceDTO courceToCourceDTO(Cource cource);
 
     Cource courceDTOToCource(CourceDTO courceDTO);
+
+    List<PhotoDTO> PhotoListToDtoList(List<Photo> photos);
 }

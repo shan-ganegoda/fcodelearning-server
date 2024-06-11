@@ -1,14 +1,12 @@
 package com.fcodelearning.edu.controller;
 
 import com.fcodelearning.edu.dto.CourceDTO;
-import com.fcodelearning.edu.model.Cource;
 import com.fcodelearning.edu.repository.CourceRepository;
 import com.fcodelearning.edu.security.CourceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
@@ -35,6 +33,7 @@ public class CourceController {
     public CourceDTO createCource(@RequestBody CourceDTO courceDTO) {
         return courceService.createCource(courceDTO);
     }
+
 
     @PutMapping
     public CourceDTO updateCource(@RequestBody CourceDTO courceDTO) {

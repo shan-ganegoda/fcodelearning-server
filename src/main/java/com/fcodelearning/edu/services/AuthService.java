@@ -2,7 +2,6 @@ package com.fcodelearning.edu.services;
 
 import com.fcodelearning.edu.dto.*;
 import com.fcodelearning.edu.exception.ResourceNotFoundException;
-import com.fcodelearning.edu.model.Role;
 import com.fcodelearning.edu.model.User;
 import com.fcodelearning.edu.repository.UserRepository;
 import com.fcodelearning.edu.security.JwtService;
@@ -16,12 +15,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.sql.Time;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
 @Service
