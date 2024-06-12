@@ -27,10 +27,6 @@ public class Cource {
     @JoinColumn(name = "level_id")
     private Level level;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "photo_id")
-    private Photo photo;
-
     @Lob
     @Column(name = "description")
     private String description;
@@ -47,5 +43,8 @@ public class Cource {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sub_category_id")
     private SubCategory subCategory;
+
+    @Column(name = "photo")
+    private byte[] photo;
 
 }

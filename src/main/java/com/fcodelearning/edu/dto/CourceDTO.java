@@ -2,9 +2,7 @@ package com.fcodelearning.edu.dto;
 
 import com.fcodelearning.edu.model.Lesson;
 import com.fcodelearning.edu.model.Level;
-import com.fcodelearning.edu.model.Photo;
 import com.fcodelearning.edu.model.SubCategory;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Set;
@@ -21,7 +19,7 @@ public class CourceDTO {
     private Integer authorId;
     private String fee;
     private Level level;
-    private Photo photo;
+    private byte[] photo;
     private String description;
     private String duration;
     private Byte issertified;
