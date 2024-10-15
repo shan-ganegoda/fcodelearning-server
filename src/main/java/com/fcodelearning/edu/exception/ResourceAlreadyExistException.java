@@ -3,10 +3,10 @@ package com.fcodelearning.edu.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.FOUND)
-public class ResourceNotFoundException extends RuntimeException{
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class ResourceAlreadyExistException extends RuntimeException{
 
-    public ResourceNotFoundException(String message) {
+    public ResourceAlreadyExistException(String message){
         super(message);
     }
 }

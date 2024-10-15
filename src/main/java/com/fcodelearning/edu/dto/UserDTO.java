@@ -1,26 +1,22 @@
 package com.fcodelearning.edu.dto;
 
-import com.fcodelearning.edu.model.Role;
-import com.fcodelearning.edu.model.Userstatus;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fcodelearning.edu.entity.Role;
+import com.fcodelearning.edu.entity.Userstatus;
+import lombok.*;
 
+import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Set;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class UserDTO {
-
     private Integer id;
     private String username;
     private String password;
+    private String email;
     private Userstatus userstatus;
     private String firstname;
     private String lastname;
@@ -29,6 +25,6 @@ public class UserDTO {
     private String address;
     private LocalDate dob;
     private String description;
-    private LocalDateTime lastupdated;
-    private Set<Role> roles;
+    private Instant lastupdated;
+    private Role roles;
 }
